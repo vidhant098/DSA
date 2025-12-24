@@ -1,0 +1,25 @@
+class Solution {
+public:
+    int minimumBoxes(vector<int>& apple, vector<int>& capa) {      
+ int sum= 0 ;  
+sort(capa.begin(), capa.end(), greater<int>());
+
+ for( int i = 0 ; i< apple.size() ; i++)
+ {
+  sum = sum +apple[i] ; 
+ }  
+  int count = 0 ; 
+ int cp = 0 ;
+     for( int i = 0 ; i< capa.size() ;i++)
+     { 
+       cp = cp+capa[i] ; 
+       count++;
+       if(cp>= sum ) 
+      {
+         break; 
+      }
+     }
+ return count ;
+
+    }
+};  
